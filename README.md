@@ -20,6 +20,8 @@ knowledge questions.
 
 ## Setup
 
+Requires Python 3.10+ (built and tested on 3.12).
+
 1. Create a virtualenv and install dependencies:
    ```bash
    python -m venv .venv
@@ -64,6 +66,30 @@ what's actually in the data rather than inventing fields.
 | "Find restaurants in Chattogram serving biryani." | RestaurantsDBTool |
 | "What is the healthcare policy of Bangladesh?" | WebSearchTool |
 | "What is the role of DGHS in Bangladesh?" | WebSearchTool |
+
+## Sample run
+
+Actual output from a live run (`LLM_PROVIDER=groq`):
+
+```
+Q: How many hospitals are in Dhaka?
+A: I have found that there are 9879 hospitals in Dhaka.
+
+Q: How many government institutions are in Rajshahi?
+A: There are 110 government institutions in Rajshahi.
+
+Q: Find restaurants in Chattogram serving biryani.
+A: There is one restaurant in Chattogram that serves biryani: Shah Amanat Biryani House.
+
+Q: What is the healthcare policy of Bangladesh?
+A: The healthcare policy of Bangladesh is focused on promoting primary healthcare services,
+expanding and modernizing health infrastructure, and improving access to essential medicines.
+The government has committed to increasing facility-based deliveries, expanding immunization
+coverage, and strengthening primary health care readiness. Development partners have also
+committed to aligning their support with national priorities and providing coordinated
+technical and financial assistance. The policy aims to ensure quality health, nutrition, and
+family welfare services that are affordable, attainable, and acceptable to all citizens.
+```
 
 ## Switching LLM provider
 
