@@ -1,0 +1,19 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+
+# Generated data / DBs (regenerate via data/download_datasets.py + db/build_databases.py)
+data/raw/
+db/*.db
+
+# OS
+.DS_Store
+
+# Personal planning / credentials docs (not for the repo)
+PROJECT_PLAN.md
+CREDENTIALS_SETUP.md
