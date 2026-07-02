@@ -1,8 +1,10 @@
-langchain
-langchain-community
-langchain-google-genai
-langchain-groq
-langchain-tavily
+# Pinned to the 0.3.x line: langchain 1.x removed AgentExecutor /
+# create_tool_calling_agent in favor of a LangGraph-based create_agent.
+langchain>=0.3,<0.4
+langchain-community>=0.3,<0.4
+langchain-google-genai>=2.0,<3.0
+langchain-groq>=0.2,<0.4
+langchain-tavily>=0.1,<0.3
 datasets
 pandas
 python-dotenv
