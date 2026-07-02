@@ -26,16 +26,20 @@ knowledge questions.
    source .venv/bin/activate
    pip install -r requirements.txt
    ```
-2. Copy `.env.example` to `.env` and fill in your API keys. See `CREDENTIALS_SETUP.md`
-   (generated locally, not committed) for where to get each key for free.
-3. Build the databases (only needs to be done once, or whenever you want fresh data):
+2. Copy `.env.example` to `.env` and fill in your API keys (Gemini or Groq, plus Tavily).
+   You need a free key from at least one LLM provider:
+   - Gemini: https://aistudio.google.com/apikey (set `LLM_PROVIDER=gemini`, the default)
+   - Groq: https://console.groq.com/keys (set `LLM_PROVIDER=groq`)
+   - Tavily (required either way): https://app.tavily.com/
+3. Run the agent:
+   ```bash
+   python main.py
+   ```
+   `db/*.db` are already built and committed to this repo, so no extra setup is needed.
+   Only rerun the pipeline below if you want to refresh the data from HuggingFace:
    ```bash
    python data/download_datasets.py
    python db/build_databases.py
-   ```
-4. Run the agent:
-   ```bash
-   python main.py
    ```
 
 ## Datasets
@@ -64,3 +68,6 @@ what's actually in the data rather than inventing fields.
 ## Switching LLM provider
 
 Set `LLM_PROVIDER=gemini` (default) or `LLM_PROVIDER=groq` in `.env`. Both have free tiers.
+Note: some Gemini API keys return `429 ResourceExhausted` with a `limit: 0` free-tier quota
+even though the key is valid — this is a Google Cloud project/billing eligibility issue, not
+a bug here. If you hit it, switch to `LLM_PROVIDER=groq`, which has no such restriction.

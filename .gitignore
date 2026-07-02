@@ -7,9 +7,9 @@ __pycache__/
 # Secrets
 .env
 
-# Generated data / DBs (regenerate via data/download_datasets.py + db/build_databases.py)
+# Generated raw CSVs (regenerate via data/download_datasets.py)
+# db/*.db is intentionally committed so the DB tools work with no setup beyond .env
 data/raw/
-db/*.db
 
 # OS
 .DS_Store
